@@ -3,180 +3,675 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lettre de Motivation - Section Volley</title>
+    <title>Interview — Dominique Vivarelli 🏐</title>
     <style>
+        :root {
+            --blue: #1a3d8f;
+            --blue-light: #2c5aa0;
+            --gold: #f5a623;
+            --bg: #f4f6fb;
+            --white: #ffffff;
+            --text: #1a1a2e;
+            --muted: #666;
+            --radius: 16px;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
         body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-image: url('photos/background.jpeg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            background-color: rgba(255, 255, 255, 0.95);
-            background-blend-mode: overlay;
-            color: #000000;
-            line-height: 1.6;
-            min-height: 100vh;
+            font-family: 'Georgia', serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.75;
         }
-        
-        .banner {
-            background-color: #2c5aa0;
+        .hero {
+            position: relative;
+            background: linear-gradient(135deg, #0d2257 0%, #1a3d8f 50%, #2c5aa0 100%);
             color: white;
-            padding: 30px 0;
             text-align: center;
-            font-size: 24px;
-            font-weight: bold;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .content {
-            background-color: rgba(255, 255, 255, 0.95);
-            border-radius: 10px;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-            width: 90%;
-        }
-        
-        .letter-section {
-            margin-bottom: 30px;
-            background-color: #f9f9f9;
-            padding: 25px;
-            border-radius: 10px;
-            border-left: 4px solid #2c5aa0;
-        }
-        
-        .letter-title {
-            font-size: 20px;
-            font-weight: bold;
-            color: #2c5aa0;
-            margin-bottom: 15px;
-        }
-        
-        .photo-space {
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-            margin: 20px 0;
+            padding: 48px 24px 40px;
             overflow: hidden;
         }
-        
-        .signature {
-            text-align: right;
-            margin-top: 40px;
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: url('photos/background.jpeg') center/cover no-repeat;
+            opacity: 0.12;
+        }
+        .hero-ball { font-size: 48px; display: block; margin-bottom: 10px; position: relative; }
+        .hero h1 {
+            font-size: clamp(28px, 5vw, 52px);
+            font-weight: 900;
+            letter-spacing: -1px;
+            position: relative;
+            text-shadow: 0 2px 12px rgba(0,0,0,0.4);
+        }
+        .hero h1 span { color: var(--gold); }
+        .hero-subtitle {
+            font-size: clamp(14px, 2.5vw, 20px);
+            margin-top: 12px;
+            opacity: 0.85;
+            font-style: italic;
+            position: relative;
+        }
+        .hero-meta {
+            margin-top: 16px;
+            position: relative;
+            display: inline-flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .hero-badge {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 50px;
+            padding: 4px 14px;
+            font-size: 12px;
+            backdrop-filter: blur(4px);
+        }
+        .hero-intro-block {
+            max-width: 640px;
+            margin: 20px auto 0;
+            background: rgba(255,255,255,0.1);
+            border: 1px solid rgba(255,255,255,0.25);
+            border-radius: 12px;
+            padding: 18px 22px;
+            text-align: left;
+            font-size: 14px;
+            line-height: 1.7;
+            position: relative;
+        }
+        .hero-intro-block p + p { margin-top: 10px; }
+        .hero-photo {
+            width: 140px;
+            height: 140px;
+            border-radius: 50%;
+            border: 4px solid var(--gold);
+            object-fit: cover;
+            display: block;
+            margin: 24px auto 0;
+            position: relative;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.35);
+        }
+        .chapter-nav {
+            background: var(--white);
+            border-bottom: 2px solid #e8ecf5;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+        .chapter-nav ul {
+            list-style: none;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            gap: 0;
+            min-width: max-content;
+            margin: 0 auto;
+        }
+        .chapter-nav a {
+            display: block;
+            padding: 16px 18px;
+            font-size: 13px;
+            font-family: Arial, sans-serif;
+            font-weight: 600;
+            color: var(--muted);
+            text-decoration: none;
+            border-bottom: 3px solid transparent;
+            transition: all 0.2s;
+        }
+        .chapter-nav a:hover, .chapter-nav a.active {
+            color: var(--blue);
+            border-bottom-color: var(--gold);
+        }
+        .interview-wrap {
+            max-width: 680px;
+            margin: 0 auto;
+            padding: 32px 20px 60px;
+        }
+        .chapter { margin-bottom: 56px; }
+        .chapter-header {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid #e8ecf5;
+        }
+        .chapter-icon { font-size: 28px; flex-shrink: 0; }
+        .chapter-title {
+            font-size: clamp(17px, 2.5vw, 22px);
+            font-weight: 900;
+            color: var(--blue);
+            font-family: Arial, sans-serif;
+        }
+        .chapter-divider {
+            flex: 1;
+            height: 2px;
+            background: linear-gradient(to right, var(--gold), transparent);
+            border-radius: 2px;
+        }
+        .qa-card {
+            background: var(--white);
+            border-radius: 12px;
+            box-shadow: 0 1px 8px rgba(26,61,143,0.06);
+            margin-bottom: 12px;
+            overflow: hidden;
+            border: 1px solid #e8ecf5;
+        }
+        .qa-question {
+            background: linear-gradient(to right, var(--blue), var(--blue-light));
+            color: white;
+            padding: 11px 16px;
+            font-size: 14px;
+            font-family: Arial, sans-serif;
+            font-weight: 600;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+        .qa-question::before {
+            content: 'Q';
+            background: var(--gold);
+            color: var(--blue);
+            font-weight: 900;
+            font-size: 11px;
+            padding: 2px 6px;
+            border-radius: 4px;
+            flex-shrink: 0;
+            margin-top: 1px;
+        }
+        .qa-answer {
+            padding: 14px 16px;
+            font-size: 15px;
+            color: var(--text);
+            border-left: 3px solid var(--gold);
+            line-height: 1.65;
+        }
+        .qa-answer::before { content: '« '; color: var(--gold); font-size: 17px; font-weight: bold; }
+        .qa-answer::after  { content: ' »'; color: var(--gold); font-size: 17px; font-weight: bold; }
+        .highlight-card {
+            background: linear-gradient(135deg, #fff9ee, #fff3d4);
+            border: 2px solid var(--gold);
+            border-radius: 12px;
+            padding: 16px 18px;
+            margin: 16px 0;
+            font-size: 15px;
+            font-style: italic;
+            color: #5a3c00;
+        }
+        .highlight-card .icon { font-size: 22px; display: block; margin-bottom: 6px; }
+        .photo-block {
+            margin: 20px 0;
+            text-align: center;
+        }
+        .photo-block img, .photo-block video {
+            max-width: 100%;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.14);
+            display: block;
+            margin: 0 auto;
+        }
+        .photo-caption {
+            margin-top: 8px;
+            font-size: 12px;
+            color: var(--muted);
             font-style: italic;
         }
-        
+        .stat-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 14px 0;
+        }
+        .stat-pill {
+            background: var(--blue);
+            color: white;
+            border-radius: 50px;
+            padding: 6px 14px;
+            font-size: 13px;
+            font-family: Arial, sans-serif;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .stat-pill .pill-icon { font-size: 15px; }
+        .big-quote {
+            text-align: center;
+            padding: 28px 20px;
+            margin: 20px 0;
+            background: linear-gradient(135deg, var(--blue) 0%, #0d2257 100%);
+            border-radius: 12px;
+            color: white;
+        }
+        .big-quote .quote-mark {
+            font-size: 56px;
+            line-height: 0.6;
+            color: var(--gold);
+            display: block;
+            margin-bottom: 14px;
+        }
+        .big-quote p {
+            font-size: clamp(15px, 2.5vw, 20px);
+            font-style: italic;
+            max-width: 500px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
         .footer {
-            background-color: #2c5aa0;
+            background: linear-gradient(135deg, #0d2257, #1a3d8f);
             color: white;
             text-align: center;
-            padding: 20px;
-            margin-top: 40px;
+            padding: 32px 24px;
         }
-        
-        @media (max-width: 768px) {
-            .content {
-                width: 95%;
-                margin: 10px auto;
-                padding: 15px;
-            }
-            
-            .banner {
-                font-size: 20px;
-                padding: 20px 0;
-            }
-            
-            .letter-title {
-                font-size: 18px;
-            }
-            
-            .letter-section {
-                padding: 20px;
-                margin-bottom: 20px;
-            }
+        .footer-title {
+            font-size: 17px;
+            font-weight: bold;
+            margin-bottom: 6px;
         }
-        
-        @media (max-width: 480px) {
-            .content {
-                width: 98%;
-                padding: 10px;
-            }
-            
-            .banner {
-                font-size: 18px;
-                padding: 15px 0;
-            }
-            
-            .letter-title {
-                font-size: 16px;
-            }
-            
-            .letter-section {
-                padding: 15px;
-            }
+        .footer-meta {
+            opacity: 0.75;
+            font-size: 12px;
+            font-style: italic;
+            margin-top: 8px;
+        }
+        .reveal {
+            opacity: 0;
+            transform: translateY(16px);
+            transition: opacity 0.4s ease, transform 0.4s ease;
+        }
+        .reveal.visible {
+            opacity: 1;
+            transform: none;
+        }
+        @media (max-width: 600px) {
+            .hero { padding: 40px 16px 32px; }
+            .interview-wrap { padding: 20px 12px 48px; }
+            .chapter-nav a { padding: 12px 10px; font-size: 11px; }
         }
     </style>
 </head>
 <body>
-    <div class="banner">
-        Voila ma motivation pour la section sportive
+<div class="hero">
+    <span class="hero-ball">🏐</span>
+    <h1>Dominique <span>Vivarelli</span></h1>
+    <p class="hero-subtitle">Interview — Section Sportive Volley · Collège Paul Gauguin · 4ème</p>
+    <div class="hero-meta">
+        <span class="hero-badge">🎓 Élève de 5ème</span>
+        <span class="hero-badge">📅 15 mai 2026</span>
+        <span class="hero-badge">🏐 Passion volley depuis la 6ème</span>
     </div>
-    
-    <div class="content">
-        <div class="letter-section">
-            <div class="letter-title">Introduction</div>
-            <p>Monsieur Bianchi,</p>
-            <p>J'ai réalisé ce site afin de montrer ma motivation pour continuer la section sportive de volley-ball du collège en quatrième.</p>
-            
-            <div class="photo-space">
-                <img src="photos/photo1" alt="Photo de moi en train de jouer au volley" style="max-width: 100%; height: auto; border-radius: 12px; display: block; margin: 0 auto;">
-            </div>
-        </div>
-        
-        <div class="letter-section">
-            <div class="letter-title">Ma passion pour le volley-ball</div>
-            <p>Le volley-ball est un sport qui me passionne. J'adore l'esprit d'équipe, la coordination et le dynamisme de ce sport. Je souhaiterais m'améliorer au sein de la section sportive.</p>
-            <p>Ex : je joue quasiment tous les week-ends en dehors de la section.</p>
-            
-            <div class="photo-space">
-                <img src="photos/photo2" alt="Photo de mes équipiers ou moi en compétition" style="max-width: 100%; height: auto; border-radius: 12px; display: block; margin: 0 auto;">
-            </div>
-        </div>
-        
-        <div class="letter-section">
-            <div class="letter-title">Mes qualités sportives</div>
-            <p>Je suis motivé, persévérant et je prgresse très rapidement. Je travaille régulièrement ma technique et ma condition physique pour m'améliorer. Je suis capable de m'adapter rapidement aux situations de jeu.</p>
-            
-            <div class="photo-space">
-                <img src="photos/smash.gif" alt="Photo montrant mes efforts sportifs" style="max-width: 100%; height: auto; border-radius: 12px; display: block; margin: 0 auto;">
-            </div>
-        </div>
-        
-        
-        
-        <div class="letter-section">
-            <div class="letter-title">Conclusion</div>
-            <p>J'espère sincèrement pouvoir poursuivre la section sportive de volley-ball. Je suis convaincu que ce sport me permettra de progresser sportivement tout en développant ma passion pour le volley-ball.</p>
-            
-            <div class="photo-space">
+    <div class="hero-intro-block">
+        <p>Bonjour Monsieur Bianchi, c'est Dominique. Je suis en 5ème et je voudrais continuer la section sportive volley-ball en 4ème.</p>
+        <p>Mon papa et moi avons construit ce site pour vous présenter ma candidature. J'ai répondu à une interview, avec mes propres mots. L'IA nous a aidés à coder le site et a parfois corrigé mes fautes ou reformulé mes phrases qui n'allaient pas.</p>
+    </div>
+</div>
+<nav class="chapter-nav">
+    <ul>
+        <li><a href="#passion">🏐 Ma passion</a></li>
+        <li><a href="#emotion">🔥 Émotions & souvenirs</a></li>
+        <li><a href="#mental">💪 Mon mental</a></li>
+        <li><a href="#technique">🎯 Technique</a></li>
+        <li><a href="#equipe">👥 L'équipe</a></li>
+        <li><a href="#avenir">🚀 L'avenir</a></li>
+        <li><a href="#style">⚡ Questions stylées</a></li>
+        <li><a href="#conclusion">🙏 Conclusion</a></li>
+    </ul>
+</nav>
+<div class="interview-wrap">
+<section class="chapter reveal" id="passion">
+    <div class="chapter-header">
+        <span class="chapter-icon">🏐</span>
+        <h2 class="chapter-title">Ma passion du volley</h2>
+        <div class="chapter-divider"></div>
+    </div>
+    <div class="stat-row">
+        <div class="stat-pill"><span class="pill-icon">❤️</span> Mon sport préféré</div>
+        <div class="stat-pill"><span class="pill-icon">🏐</span> Joue depuis la 6ème</div>
+        <div class="stat-pill"><span class="pill-icon">🎮</span> Joue tous les jours</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Pourquoi le volley est-il important pour toi ?</div>
+        <div class="qa-answer">Je ne sais pas comment l'exprimer, mais j'ai toujours envie de jouer. Je suis toujours en train de jouer avec ma balle à la maison ou de regarder des vidéos. C'est important car j'en ai besoin et si je l'ai pas je suis en manque.</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Depuis quand joues-tu au volley ?</div>
+        <div class="qa-answer">Depuis la 6ème, mais j'ai envie de dire depuis un peu toujours car depuis petit j'adore les jeux de balle où on se la lance, on se la passe et on la rattrappe.</div>
+    </div>
+    <div class="photo-block">
+        <img src="photos/photo4.jpg" alt="Dominique tout petit avec un ballon de volley">
+        <p class="photo-caption">Depuis tout petit, c'est dans mes gènes 🏐</p>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Pourquoi as-tu choisi ce sport et pas un autre ?</div>
+        <div class="qa-answer">J'ai découvert ce sport le premier trimestre de sixième, grâce à Monsieur Bianchi, mon professeur de sport et entraîneur, qui est passionné de volley. Ça a été une réelle découverte et un coup de cœur ! Depuis petit j'ai toujours adoré les jeux de balle où on se fait des passes et où on doit la maîtriser ou faire un maximum de passes. On y a toujours beaucoup joué à la maison avec ma sœur et mes parents.</div>
+    </div>
+    <div class="highlight-card">
+        <span class="icon">💛</span>
+        En CM2 j'ai aussi joué au <strong>volley handisport</strong> avec des personnes handicapées. C'était vraiment bien, tout le monde jouait ensemble et c'était super. Ça m'a montré que le volley c'est un sport qui rassemble vraiment tout le monde. C'était très émouvant aussi, et ils jouaient super bien !
+    </div>
+    <div class="photo-block">
+        <img src="photos/photo2.jpg" alt="Dominique jouant au volley handisport en CM2">
+        <p class="photo-caption">Volley handisport en CM2, moi contre une dame handicapée qui était très forte !</p>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Qu'est-ce que tu ressens quand tu joues ?</div>
+        <div class="qa-answer">De la joie, du plaisir, du challenge, la satisfaction d'un coup bien réalisé.</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">À quoi penses-tu juste avant un match ?</div>
+        <div class="qa-answer">Que je vais m'amuser, une volonté de gagner et de reproduire des tactiques travaillées.</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Quel moment te donne le plus d'adrénaline ?</div>
+        <div class="qa-answer">Au moment des points décisifs. Une fois il y avait 26-25, je me souviens de ce point, nous l'avons hélas perdu.</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Pourquoi veux-tu entrer en classe de volley ?</div>
+        <div class="qa-answer">J'aime le volley, ça a pris une place importante dans ma vie. C'est une passion pour moi, mon sport préféré.</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Qu'est-ce que cette classe peut t'apporter ?</div>
+        <div class="qa-answer">Poursuivre ma passion du volley, m'améliorer en jouant beaucoup, avec de très bons joueurs et bénéficier des conseils du professeur ! Et bien sûr rester dans ce groupe d'amis qui a une excellente ambiance !</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Pourquoi es-tu prêt à t'investir dedans ?</div>
+        <div class="qa-answer">Je suis passionné, je veux progresser dans ce sport pour gagner des matchs et perfectionner des coups que j'adore exécuter.</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Est-ce que le volley a changé quelque chose dans ta vie ?</div>
+        <div class="qa-answer">Je suis plus à l'écoute de mes partenaires, je suis meilleur au niveau de la concentration pour apporter le meilleur à l'équipe. Le volley m'apporte de la sérénité. Il m'apprend à gérer ma frustration, notamment quand je perds.</div>
+    </div>
+</section>
 
-                <img src="photos/brizard.png" alt="Photo finale motivante" style="max-width: 100%; height: auto; border-radius: 12px; display: block; margin: 0 auto;">
-            </div>
-        </div>
-        
-        <div class="signature">
-            <p>Cordialement,</p>
-            <p>Vivarelli Dominique</p>
-            <p>Élève de 5ème</p>
-            <p>10/05/2026</p>
-        </div>
+<section class="chapter reveal" id="emotion">
+    <div class="chapter-header">
+        <span class="chapter-icon">🔥</span>
+        <h2 class="chapter-title">Émotions &amp; souvenirs</h2>
+        <div class="chapter-divider"></div>
     </div>
-    
-    <div class="footer">
-        Section Sportive Volley-Ball - Collège paul gaugin
+    <div class="stat-row">
+        <div class="stat-pill"><span class="pill-icon">⭐</span> 1er entraînement décisif</div>
+        <div class="stat-pill"><span class="pill-icon">💥</span> Smash sauté gagnant</div>
+        <div class="stat-pill"><span class="pill-icon">😤</span> Défaite qui m'a appris</div>
     </div>
+    <div class="qa-card">
+        <div class="qa-question">Ton meilleur souvenir au volley ?</div>
+        <div class="qa-answer">Celui qui me revient en premier : le premier entraînement. Raoul s'était occupé de moi pour l'intégration, j'avais le sentiment de faire partie du club auquel je rêvais d'appartenir. C'est là où tout a commencé. Ce premier jour a été décisif.</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Le moment où tu as été le plus fier ?</div>
+        <div class="qa-answer">Le moment en match où j'ai fait un smash sauté frappé et que j'ai gagné le point.</div>
+    </div>
+    <div class="photo-block">
+        <img src="photos/smash.gif" alt="Dominique qui fait un smash en extérieur" style="max-width:100%; width:300px;">
+        <p class="photo-caption">Le smash, mon geste préféré 💥</p>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Le moment où tu as eu le plus de stress ?</div>
+        <div class="qa-answer">Quand on a perdu contre Thomas Mann 1 à 25-23. Cette défaite m'a fait mal et m'a beaucoup appris.</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Un moment drôle avec ton équipe ?</div>
+        <div class="qa-answer">Un moment où un joueur de l'équipe adverse a dunké sur son coéquipier au lieu de faire une passe.</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Un entraînement dont tu te souviendras longtemps ?</div>
+        <div class="qa-answer">L'entraînement passe et attaque sautée frappée.</div>
+    </div>
+</section>
+
+<section class="chapter reveal" id="mental">
+    <div class="chapter-header">
+        <span class="chapter-icon">💪</span>
+        <h2 class="chapter-title">Mon mental</h2>
+        <div class="chapter-divider"></div>
+    </div>
+    <div class="stat-row">
+        <div class="stat-pill"><span class="pill-icon">🧠</span> Concentration maximale</div>
+        <div class="stat-pill"><span class="pill-icon">😤</span> Gère la frustration</div>
+        <div class="stat-pill"><span class="pill-icon">🤝</span> Met ses coéquipiers en confiance</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Quelle est ta plus grande qualité ?</div>
+        <div class="qa-answer">Le service.</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Dans quoi dois-tu progresser ?</div>
+        <div class="qa-answer">Je veux me perfectionner en tout, mais mes passes à 10 ne sont pas aussi élégantes et efficaces que certains : ils semblent effleurer la balle, et envoyer très loin sans un bruit et sans effort apparent, alors que c'est une technique qui sollicite tout le corps. J'aimerais aussi être encore meilleur au smash. À cause de ça et à cause de ma taille je n'ose pas suffisamment attaquer alors que j'adore ça.</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Comment réagis-tu après une erreur ?</div>
+        <div class="qa-answer">Nervosité et culpabilité.</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Comment motives-tu tes coéquipiers ?</div>
+        <div class="qa-answer">Check, et mise en confiance quand ils loupent un coup, même si parfois ça me frustre.</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Quelle difficulté as-tu réussi à dépasser ?</div>
+        <div class="qa-answer">Le service. C'était mon objectif numéro 1, d'autant que c'est l'engagement, le seul moment où on est en total control. C'est un avantage décisif.</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Qu'est-ce qui te pousse à continuer ?</div>
+        <div class="qa-answer">La passion.</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Quelle est la chose la plus dure dans le volley selon toi ?</div>
+        <div class="qa-answer">Les passes à 10.</div>
+    </div>
+</section>
+
+<section class="chapter reveal" id="technique">
+    <div class="chapter-header">
+        <span class="chapter-icon">🎯</span>
+        <h2 class="chapter-title">Questions techniques</h2>
+        <div class="chapter-divider"></div>
+    </div>
+    <div class="stat-row">
+        <div class="stat-pill"><span class="pill-icon">🏆</span> Poste : attaquant / réceptionneur</div>
+        <div class="stat-pill"><span class="pill-icon">💥</span> Geste préféré : le smash</div>
+        <div class="stat-pill"><span class="pill-icon">🎯</span> Défi : la passe à 10</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Ton poste préféré ?</div>
+        <div class="qa-answer">Au volley à 4 : l'attaquant / réceptionneur, car j'adore réceptionner les services adverses et smasher en attaque. Il faut être rapide et exécuter parfaitement des gestes techniques. Et on est sur les deux moments décisifs d'un point.</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Ton geste préféré ?</div>
+        <div class="qa-answer">Le service et le smash.</div>
+    </div>
+    <div class="photo-block">
+        <img src="photos/smashtokyo.jpg" alt="Dominique s'entraîne à smasher dans la rue à Tokyo" style="max-height:320px; width:auto;">
+        <p class="photo-caption">À Tokyo, même dans la rue, le smash c'est une obsession 🇯🇵</p>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Le geste le plus difficile pour toi ?</div>
+        <div class="qa-answer">La passe à 10 (voir ma réponse sur la progression plus haut).</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Ton exercice d'entraînement préféré ?</div>
+        <div class="qa-answer">L'entraînement passe et attaque sautée frappée.</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Celui que tu aimes le moins ?</div>
+        <div class="qa-answer">Il n'y en a pas qui vient à l'esprit, ils sont tous bien.</div>
+    </div>
+</section>
+
+<section class="chapter reveal" id="equipe">
+    <div class="chapter-header">
+        <span class="chapter-icon">👥</span>
+        <h2 class="chapter-title">L'équipe</h2>
+        <div class="chapter-divider"></div>
+    </div>
+    <div class="stat-row">
+        <div class="stat-pill"><span class="pill-icon">👕</span> Fier de porter le maillot</div>
+        <div class="stat-pill"><span class="pill-icon">🛡️</span> Rôle : défenseur</div>
+        <div class="stat-pill"><span class="pill-icon">👁️</span> Apprend en observant</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Tu préfères attaquer, défendre ou encourager ?</div>
+        <div class="qa-answer">Défendre.</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Qu'est-ce qu'une bonne équipe selon toi ?</div>
+        <div class="qa-answer">Une équipe complète, chacun à son poste, avec une bonne qualité technique et qui se fait confiance.</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Qu'est-ce qui fait gagner une équipe ?</div>
+        <div class="qa-answer">Le talent des joueurs, bien se connaître, les automatismes.</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Qu'est-ce que tu apprends grâce aux autres joueurs ?</div>
+        <div class="qa-answer">L'observation de leurs gestes, leurs conseils, leur attitude.</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Il y a autre chose qui compte pour toi dans le fait d'appartenir à cette équipe ?</div>
+        <div class="qa-answer">Oui ! J'adore porter les sweat et les maillots de l'équipe. Ça compte vraiment pour moi, c'est un signe d'appartenance au groupe.</div>
+    </div>
+</section>
+
+<section class="chapter reveal" id="avenir">
+    <div class="chapter-header">
+        <span class="chapter-icon">🚀</span>
+        <h2 class="chapter-title">L'avenir</h2>
+        <div class="chapter-divider"></div>
+    </div>
+    <div class="stat-row">
+        <div class="stat-pill"><span class="pill-icon">🌟</span> Objectif : titulaire en volley à 6</div>
+        <div class="stat-pill"><span class="pill-icon">🎯</span> Cette année : maîtriser la passe à 10</div>
+        <div class="stat-pill"><span class="pill-icon">📈</span> Toujours progresser</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Quel objectif veux-tu atteindre ?</div>
+        <div class="qa-answer">Maîtriser parfaitement le service smashé, l'attaque sautée frappée, et la passe à 10.</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Où tu te vois dans quelques années au volley ?</div>
+        <div class="qa-answer">Dans un rôle de titulaire décisif dans une équipe de bons copains, en volley à 6.</div>
+    </div>
+    <div class="photo-block">
+        <img src="photos/brizard.png" alt="Montage : Antoine Brizard avec la tête de Dominique">
+        <p class="photo-caption">Quand on rêve en grand… Antoine Brizard version Dominique Vivarelli 😄🏆</p>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Qu'est-ce que tu aimerais absolument réussir cette année ?</div>
+        <div class="qa-answer">Les passes à 10 surtout, et aussi les attaques.</div>
+    </div>
+</section>
+
+<section class="chapter reveal" id="style">
+    <div class="chapter-header">
+        <span class="chapter-icon">⚡</span>
+        <h2 class="chapter-title">Questions originales &amp; stylées</h2>
+        <div class="chapter-divider"></div>
+    </div>
+    <div class="stat-row">
+        <div class="stat-pill"><span class="pill-icon">😄</span> Le volley = trop bien</div>
+        <div class="stat-pill"><span class="pill-icon">🌍</span> Sport universel</div>
+        <div class="stat-pill"><span class="pill-icon">⚡</span> Super pouvoir : sauver l'impossible</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Si le volley était une émotion, ce serait laquelle ?</div>
+        <div class="qa-answer">Le plaisir.</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Si tu devais résumer le volley en un mot ?</div>
+        <div class="qa-answer">Trop bien. (Ok, deux mots 😄)</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Quel moment d'un match tu préfères ?</div>
+        <div class="qa-answer">Le début. Je trouve que c'est le plus important.</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Qu'est-ce que tu ressens quand tu réussis un beau point ?</div>
+        <div class="qa-answer">Content pour moi et fier d'avoir aidé mon équipe.</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Pourquoi le volley est différent des autres sports selon toi ?</div>
+        <div class="qa-answer">Je ne sais pas comment dire, juste c'est celui que je peux et je veux jouer tous les jours à la différence des autres. Aussi, même si les règles paraissent un peu compliquées, c'est le sport de balle le plus ludique et le plus naturel, car partout dans le monde on joue à se passer la balle sans la faire tomber par terre. C'est le sport de balle le plus universel. C'est un sport très complet aussi : il fait appel à tout le corps, le mental, la tactique…</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Si tu devais convaincre quelqu'un de faire du volley, que dirais-tu ?</div>
+        <div class="qa-answer">Je ne sais si c'est bien de dire ça comme ça, mais c'est un sport qui paraît sympa mais pas plus que ça par rapport au foot par exemple... mais pourtant quand on y joue c'est juste génial !</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Quel serait ton "super pouvoir" au volley ?</div>
+        <div class="qa-answer">Sauver les balles les plus impossibles à atteindre.</div>
+    </div>
+    <div class="qa-card">
+        <div class="qa-question">Quel est le conseil qui t'a le plus fait progresser ?</div>
+        <div class="qa-answer">Pour perfectionner la passe à 10 : imaginer que j'ai un globe entre les mains et de mettre les mains en forme de triangle. Et aussi je pense toujours à <strong>"Toujours faire 3 échanges !"</strong> 😄 Ça a complètement changé ma manière de penser mon jeu : je sais quoi faire, ça guide mon jeu, ça permet d'organiser l'équipe, et j'ai pu voir à quel point ça permet d'être dans la meilleure position pour gagner le point.</div>
+    </div>
+    <div class="big-quote">
+        <span class="quote-mark">"</span>
+        <p>Toujours faire 3 échanges !</p>
+    </div>
+</section>
+
+<section class="chapter reveal" id="conclusion">
+    <div class="chapter-header">
+        <span class="chapter-icon">🙏</span>
+        <h2 class="chapter-title">Conclusion &amp; remerciements</h2>
+        <div class="chapter-divider"></div>
+    </div>
+
+    <div class="highlight-card" style="background: linear-gradient(135deg, #e8f4f8, #d4e9f2); border-color: #2c5aa0; color: #0d2257;">
+        <span class="icon">💙</span>
+        Merci de m'avoir lu. J'espère que cette interview vous aura donné une idée de qui je suis et de ce que le volley représente pour moi. Je suis prêt et motivé pour cette section en 4ème.
+    </div>
+
+    <div class="highlight-card" style="background: linear-gradient(135deg, #fff9ee, #fff3d4); border-color: var(--gold); color: #5a3c00;">
+        <span class="icon">🙌</span>
+        Merci à Monsieur Bianchi de m'avoir fait découvrir ce sport. Merci à Raoul pour l'intégration. Merci à mes coéquipiers, ma famille, et mon papa pour ce projet.
+    </div>
+
+    <div class="photo-block" style="margin-top: 32px;">
+        <img src="photos/photo1.jpg" alt="Dominique à Tokyo, fier avec un ballon de volley sous le bras" style="max-width:100%; width:560px;">
+        <p class="photo-caption" style="font-size: 14px; margin-top: 12px; color: #444;">Le volley compte vraiment beaucoup pour moi. J'espère pouvoir continuer en 4ème. 🏐</p>
+    </div>
+</section>
+
+</div><!-- end interview-wrap -->
+
+<footer class="footer">
+    <div class="footer-title">🏐 Section Sportive Volley-Ball — Collège Paul Gauguin</div>
+    <div>Dominique Vivarelli · Élève de 5ème · Candidature en 4ème section volley</div>
+    <div class="footer-meta">
+        Cette interview a été réalisée entièrement par Dominique Vivarelli, avec ses propres mots, le 15 mai 2026.
+    </div>
+</footer>
+<script>
+    const reveals = document.querySelectorAll('.reveal');
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                e.target.classList.add('visible');
+            }
+        });
+    }, { threshold: 0.08 });
+    reveals.forEach(el => observer.observe(el));
+</script>
+<script>
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.chapter-nav a');
+    const navObserver = new IntersectionObserver((entries) => {
+        entries.forEach(e => {
+            if (e.isIntersecting) {
+                navLinks.forEach(l => l.classList.remove('active'));
+                const active = document.querySelector('.chapter-nav a[href="#' + e.target.id + '"]');
+                if (active) {
+                    active.classList.add('active');
+                    active.scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+                }
+            }
+        });
+    }, { rootMargin: '-10% 0px -85% 0px', threshold: 0 });
+    sections.forEach(s => navObserver.observe(s));
+</script>
 </body>
 </html>
