@@ -221,6 +221,19 @@
             color: var(--muted);
             font-style: italic;
         }
+        .photo-duo {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+            align-items: center;
+        }
+        .photo-duo img {
+            height: 320px;
+            width: auto;
+            max-width: 100%;
+            object-fit: contain;
+        }
         .stat-row {
             display: flex;
             flex-wrap: wrap;
@@ -352,11 +365,11 @@
     </div>
     <div class="highlight-card">
         <span class="icon">💛</span>
-        En CM2 j'ai aussi joué au <strong>volley handisport</strong> avec des championnent de frances handicapées. C'était vraiment bien, tout le monde jouait ensemble et c'était super. Ça m'a montré que le volley c'est un sport qui rassemble vraiment tout le monde. C'était très émouvant aussi, et elles jouaient super bien !
-    </div>han
+        En CM2 j'ai aussi joué au <strong>volley handisport</strong> avec des joueuses de l'équipe de France de Volley handisport. Elles avaient des prothèses C'était vraiment bien, tout le monde jouait ensemble et c'était super. Ça m'a montré que le volley c'est un sport qui rassemble vraiment tout le monde. C'était très émouvant aussi, et elles jouaient super bien !
+    </div>
     <div class="photo-block">
         <img src="photos/photo2.jpg" alt="Dominique jouant au volley handisport en CM2">
-        <p class="photo-caption">Volley handisport en CM2, moi contre une championne de france handicapée qui était très forte !</p>
+        <p class="photo-caption">Volley handisport en CM2, moi contre une véritable championne de France handisport qui était hyper forte !</p>
     </div>
     <div class="qa-card">
         <div class="qa-question">Qu'est-ce que tu ressens quand tu joues ?</div>
@@ -470,7 +483,10 @@
         <div class="qa-answer">Le service et l'attaque sautée frappée.</div>
     </div>
     <div class="photo-block">
-        <img src="photos/smashtokyo.jpg" alt="Dominique s'entraîne à smasher dans la rue à Tokyo" style="max-height:320px; width:auto;">
+        <div class="photo-duo">
+            <img src="photos/smashtokyo.jpg" alt="Dominique s'entraîne à smasher dans la rue à Tokyo">
+            <img src="photos/phila3.jpeg" alt="Dominique avec son ballon de volley à Philadelphie">
+        </div>
         <p class="photo-caption">À Tokyo, même dans la rue, le smash c'est une obsession 🇯🇵</p>
     </div>
     <div class="qa-card">
